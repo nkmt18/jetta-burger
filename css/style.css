@@ -1,0 +1,916 @@
+@charset "UTF-8";
+body {
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  font-family: proxima-nova, "Noto Sans JP", sans-serif;
+}
+
+nav a:hover {
+  border-bottom: solid 2px #fff;
+}
+
+p {
+  line-height: 24px;
+  font-weight: 700, 500;
+  font-style: normal;
+}
+
+h2 {
+  font-weight: 900;
+  font-style: normal;
+  border-bottom: 10px solid #FFCE00;
+  display: inline-block;
+}
+
+nav {
+  line-height: 24px;
+  font-weight: 700, 500;
+  font-style: normal;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: -20px;
+  height: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: left;
+  margin: 0 40px;
+  width: 100%;
+  z-index: 10;
+}
+
+header h1 {
+  width: 140px;
+  height: 140px;
+  padding: 20px;
+  display: inline-block;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+header img {
+  margin-right: 20px;
+  width: 100%;
+  min-width: 140px;
+  /* 最小幅 */
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+}
+
+header li {
+  font-weight: 800;
+  font-style: normal;
+  display: inline-block;
+  margin-left: 50px;
+}
+
+header i.header-fa-brands {
+  color: #fff;
+  font-size: 25px;
+  position: absolute;
+  margin-right: 15%;
+  top: 100px;
+  right: 150px;
+}
+
+/*==========================================
+　ナビゲーションスクロールのためのcss
+===================================*/
+/*========= スクロール途中からヘッダーの高さが小さくなるためのCSS ===============*/
+#header {
+  /*はじめの高さを設定*/
+  display: none;
+  height: 220px;
+  width: 120%;
+  /*以下はレイアウトのためのCSS*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  color: transparent;
+  text-align: center;
+  padding: 20px;
+  margin-left: -30px;
+}
+
+#header nav {
+  margin-right: 80%;
+}
+
+#header h1 {
+  margin-left: 150px;
+}
+
+/*HeightMinというクラス名がついたら高さを小さく、上部固定に*/
+#header.HeightMin {
+  position: fixed;
+  z-index: 500;
+  /*最前面へ*/
+  height: 100px;
+  background-color: #fff;
+  color: #000;
+  animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+  from {
+    opacity: 0;
+    transform: translateY(-170px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 以下は検証用のレイアウトのための CSS*/
+.pc-header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.pc-header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+
+.pc-header .black {
+  display: none;
+}
+
+#header.HeightMin .white {
+  display: none;
+}
+
+#header.HeightMin .black {
+  display: block;
+}
+
+#header.HeightMin .black img {
+  margin-top: 15px;
+  width: 70px;
+  height: 70px;
+}
+
+#header.HeightMin nav {
+  width: 600px;
+}
+
+#header.HeightMin nav ul li a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+}
+
+#header.HeightMin i.header-fa-brands {
+  color: #000;
+  position: absolute;
+  top: 35px;
+  right: 150px;
+  z-index: 600;
+}
+
+section {
+  padding: 300px 0;
+}
+
+.top .copy {
+  font-weight: 800;
+  font-style: normal;
+  color: #fff;
+  font-size: 20px;
+  transform: rotate(90deg);
+  position: absolute;
+  top: 350px;
+  left: 160px;
+  z-index: 2;
+}
+
+#home .top .copy {
+  top: 415px;
+  left: 98px;
+}
+
+.top .scroll {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 65%;
+  right: 13%;
+}
+
+.top .scroll p {
+  font-weight: 800;
+  font-style: normal;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+.top .scroll .arrow {
+  margin: 30px 2px 0 0;
+}
+
+header.responsive-header {
+  display: none;
+}
+
+.top .main-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hamburger-button {
+  display: none;
+}
+
+/*==========================================
+　トップ　スライダーのためのcss
+===================================*/
+.home-slider {
+  object-fit: cover;
+  position: relative;
+  z-index: -10;
+  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+  height: 100vh;
+  /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+
+/*　背景画像設定　*/
+.home-slider-item {
+  width: 100%;
+  /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+  height: 100vh;
+  /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  background-repeat: no-repeat;
+  /*背景画像をリピートしない*/
+  background-position: center;
+  /*背景画像の位置を中央に*/
+  background-size: cover;
+  /*背景画像が.slider-item全体を覆い表示*/
+}
+
+/*矢印の設定*/
+.home-slick-prev,
+.home-slick-next {
+  display: none;
+}
+
+.home-slick-prev {
+  display: none;
+}
+
+.home-slick-next {
+  display: none;
+  /*次へ矢印の位置と形状*/
+}
+
+/*ドットナビゲーションの設定*/
+.home-slick-dots {
+  display: none;
+  /*ドットの位置*/
+}
+
+.home-slick-dots li {
+  display: none;
+}
+
+.home-slick-dots button {
+  display: none;
+}
+
+.home-slick-dots .slick-active button {
+  display: none;
+}
+
+footer {
+  background-color: #1F1F1F;
+  padding: 110px 100px 45px 100px;
+  height: 600px;
+}
+
+footer .wrraper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 200px;
+}
+
+footer .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+}
+
+footer h1 {
+  margin: -5px 0 20px 0;
+  display: block;
+}
+
+footer .left i {
+  color: #fff;
+  display: block;
+  text-align: left;
+  margin-left: 5px;
+  font-size: 40px;
+}
+
+footer .footer-nav {
+  text-align: left;
+}
+
+footer .footer-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  height: 15px;
+}
+
+footer .footer-nav li {
+  width: 120px;
+}
+
+footer .footer-nav li a {
+  font-weight: 800;
+  font-style: normal;
+  display: block;
+  color: #fff;
+}
+
+footer p {
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+#home .consept {
+  margin: 230px auto 0 auto;
+  text-align: center;
+}
+
+#home .consept h2 {
+  font-family: homemade-apple-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+#home .consept p {
+  margin-bottom: 30px;
+}
+
+#home .consept .paragraph {
+  margin-bottom: 60px;
+}
+
+#home .consept .consept-food {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: start;
+  width: 800px;
+  margin: -300px auto 0 auto;
+  height: 300px;
+}
+
+#home .consept .consept-food img {
+  width: 290px;
+  margin: 0 10px 0 -35px;
+  padding: 0 10px;
+}
+
+#home .consept .consept-food img:nth-child(2) {
+  margin: 0 35px 0 0;
+}
+
+.humberger {
+  background-image: url(../images/pattern.png);
+  margin: -50px auto 0 auto;
+}
+
+.humberger .inner {
+  width: 1020px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 200px auto;
+}
+
+.humberger h2 {
+  font-weight: 900;
+  font-style: normal;
+  width: 600px;
+  font-size: 130px;
+  padding-bottom: 40px;
+  border-bottom: 10px solid #000;
+  margin-bottom: 40px;
+  line-height: 0.9;
+}
+
+.humberger h3 {
+  font-weight: 800;
+  font-style: normal;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.humberger .left {
+  padding-left: 30px;
+  width: 70%;
+  height: 605px;
+  text-align: left;
+}
+
+.humberger .right {
+  width: 50%;
+}
+
+.humberger img {
+  width: 100%;
+  max-width: 800px;
+  /* 最大幅 */
+  min-width: 800px;
+  /* 最小幅 */
+  margin: 30px 0 0 -300px;
+}
+
+.info {
+  margin: 0 auto 180px auto;
+  text-align: center;
+  width: 1020px;
+}
+
+.info h2 {
+  font-size: 60px;
+  padding-bottom: 20px;
+  margin-bottom: 70px;
+}
+
+.info .info-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  margin: -280px auto 0 auto;
+  text-align: left;
+  height: 640px;
+}
+
+.info .topics {
+  border-color: #FFCE00;
+  width: 310px;
+}
+
+.info .topics img {
+  margin-bottom: 10px;
+}
+
+.info p {
+  line-height: 24px;
+  font-weight: 700, 500;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.info .date {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+#menu .page-title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#menu h2 {
+  margin-bottom: 120px;
+  border-bottom: none;
+  text-align: left;
+}
+
+#menu h3 {
+  font-weight: 900;
+  font-style: normal;
+  font-size: 60px;
+  padding: 0 0 0 140px;
+  margin-bottom: -40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+#menu h3::after {
+  content: "";
+  display: inline-block;
+  background-color: #FFCE00;
+  height: 3px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 100px;
+}
+
+#menu li img {
+  margin-bottom: 20px;
+}
+
+#menu li h4 {
+  font-weight: 800;
+  font-style: normal;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+#menu li h5 {
+  font-weight: 800;
+  font-style: normal;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#menu li p {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#menu li .price {
+  font-weight: 800;
+  font-style: normal;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  height: 600px;
+  margin: 0 0 100px 120px;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  /*スライダー内の画像を横幅100%に*/
+  height: auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+.slider .slick-slide {
+  margin: 60px 20px;
+  background-color: #FFCE00;
+  height: 500px;
+  width: 300px;
+  padding: 30px;
+  max-width: 300px;
+  /* 最大幅 */
+  min-width: 300px;
+  /* 最小幅 */
+}
+
+/*矢印の設定*/
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  top: 0%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 4px solid #FFCE00;
+  /*矢印の色*/
+  border-right: 4px solid #FFCE00;
+  /*矢印の色*/
+  height: 15px;
+  width: 15px;
+  z-index: 1;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: 85%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: 10%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+.slick-dots {
+  display: none;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  display: none;
+}
+
+.slick-dots .slick-active button {
+  display: none;
+  /*ドットボタンの現在地表示の色*/
+}
+
+#about .consept {
+  background-color: #FFCE00;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+#about .page-title {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#about h2 {
+  margin-bottom: 120px;
+  border-bottom: none;
+  text-align: left;
+}
+
+#about .warrper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1020px;
+  margin: 0 auto 0 auto;
+  padding-bottom: 140px;
+}
+
+#about .about-right {
+  width: 50%;
+  padding-top: 50px;
+  padding-left: 30px;
+  margin: 0 0 0 40px;
+  text-align: left;
+}
+#about .about-right h3.first {
+  font-weight: 900;
+  font-style: normal;
+  font-size: 30px;
+  margin: 0 0 15px -20px;
+}
+#about .about-right h3.second {
+  font-weight: 900;
+  font-style: normal;
+  font-size: 30px;
+  width: 250px;
+  margin-bottom: 50px;
+  margin-left: 120px;
+}
+
+#about .twoarea {
+  margin: 160px 0 140px 0;
+}
+
+#about .twoarea .foodarea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 100px auto;
+  height: 400px;
+}
+
+#about .twoarea .foodarea .left {
+  width: 600px;
+}
+
+#about .twoarea h2 img {
+  margin-top: 150px;
+  width: 500px;
+  text-align: left;
+}
+
+#about .twoarea .foodarea .food-img {
+  width: 600px;
+  margin-top: -50px;
+}
+
+#about .twoarea .foodarea .right {
+  margin-top: 300px;
+}
+
+#about .twoarea .foodarea p {
+  font-weight: 800;
+  font-style: normal;
+  border-bottom: 5px solid #FFCE00;
+  width: 400px;
+  margin-top: 80px;
+  margin-left: -120px;
+  margin-right: 120px;
+  text-align: right;
+}
+
+#about .twoarea .coffee-berarea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto 0 auto;
+  margin-bottom: 50px;
+  height: 500px;
+}
+
+#about .twoarea .coffee-berarea img {
+  width: 600px;
+  margin-left: 370px;
+}
+
+#about .twoarea .coffee-berarea p {
+  font-weight: 800;
+  font-style: normal;
+  border-bottom: 5px solid #FFCE00;
+  width: 400px;
+  text-align: left;
+  margin: 80px 0 0 -940px;
+}
+
+#about .twoarea .warrper span {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  margin: 5px 3px 0 7px;
+}
+
+#about .twoarea p {
+  text-align: center;
+  margin-top: -150px;
+}
+
+#about .mihama {
+  background-image: url(../images/pattern.png);
+  padding: 120px 0 120px 0;
+}
+
+#about .mihama .mihama-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 1020px;
+  margin: 0 auto;
+}
+
+#about .mihama .left {
+  width: 50%;
+  margin: 0;
+}
+
+#about .mihama .left h2 {
+  font-weight: 900;
+  font-style: normal;
+  font-size: 30px;
+  margin-bottom: 80px;
+}
+
+#about .mihama .left p {
+  margin-bottom: 30px;
+}
+
+#about .mihama .right {
+  width: 60%;
+}
+
+/*==========================================
+　アバウト　スライダーのためのcss
+===================================*/
+.about-slider {
+  position: relative;
+  z-index: 1;
+  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+  height: 100vh;
+  /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+
+/*　背景画像設定　*/
+.about-slider-item01 {
+  background: url(../img/img_01.jpg);
+}
+
+.about-slider-item02 {
+  background: url(../img/img_02.jpg);
+}
+
+.about-slider-item03 {
+  background: url(../img/img_03.jpg);
+}
+
+.about-slider-item {
+  width: 100%;
+  /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+  height: 100vh;
+  /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  background-repeat: no-repeat;
+  /*背景画像をリピートしない*/
+  background-position: center;
+  /*背景画像の位置を中央に*/
+  background-size: cover;
+  /*背景画像が.slider-item全体を覆い表示*/
+}
+
+/*矢印の設定*/
+.about-slick-prev,
+.about-slick-next {
+  position: absolute;
+  z-index: 3;
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #fff;
+  /*矢印の色*/
+  border-right: 2px solid #fff;
+  /*矢印の色*/
+  height: 25px;
+  width: 25px;
+}
+
+.about-slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: 2.5%;
+  transform: rotate(-135deg);
+}
+
+.about-slick-next {
+  /*次へ矢印の位置と形状*/
+  right: 2.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+.about-slick-dots {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin: -50px 0 0 0;
+  /*ドットの位置*/
+}
+
+.about-slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.about-slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 8px;
+  /*ドットボタンのサイズ*/
+  height: 8px;
+  /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  /*ドットボタンの色*/
+}
+
+.about-slick-dots .slick-active button {
+  background: #333;
+  /*ドットボタンの現在地表示の色*/
+}/*# sourceMappingURL=style.css.map */

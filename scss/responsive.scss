@@ -1,0 +1,490 @@
+@import "style.scss";
+@import "hamburger-menu.css";
+
+// メディアクエリ　スマホ対応
+
+@media screen and (max-width: 576px) {
+
+
+  //------------------------------------- 
+  // 全体構造
+  //-------------------------------------
+
+
+
+  //------------------------------------- 
+  // ヘッダー
+  //-------------------------------------
+
+  #header.pc-header {
+    display: none;
+  }
+
+  #header.HeightMin {
+    display: none;
+  }
+
+  header.responsive-header {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: -40px;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+  }
+
+  header.responsive-header .back-color {
+    height: 100px;
+    background-color: #fff;
+  }
+
+  header.responsive-header h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 125px;
+    height: 100px;
+    z-index: 1003;
+  }
+
+  header.responsive-header img {
+    margin: 0;
+    margin: 0 0 0 -35px;
+    width: 60px;
+    height: 60px;
+  }
+
+  header.responsive-header .hm-absolute {
+    position: absolute;
+    top: 38px;
+    right: 80px;
+  }
+
+  header.responsive-header i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    color: #000;
+    font-size: 25px;
+  }
+
+  header.responsive-header .hamburger-button {
+    position: absolute;
+    top: -7px;
+    right: -50px;
+    display: inline-block;
+  }
+
+  .top .copy {
+    position: absolute;
+    top: 232px;
+    left: 26px;
+    z-index: 2;
+  }
+
+  #home .top .copy {
+    top: 300px;
+    left: -40px;
+  }
+
+  .top .scroll {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 65%;
+    right: 47%;
+  }
+
+
+  /*==================================
+　ハンバーガーメニュー
+===================================*/
+
+
+  /* ナビゲーション */
+  .hamburger-nav {
+    /* クリックしたときのメニューを全画面にする記述 */
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    /* 背景にぼかしを入れた */
+  }
+
+  .hamburger-nav ul {
+    height: 100%;
+    width: 100%;
+    /* ※元のnavタグに100vhがかかっているため、子タグは100%で問題なし */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hamburger-nav li {
+    margin: 20px 0;
+  }
+
+  .hamburger-nav a {
+    color: #fff;
+  }
+
+
+  //------------------------------------- 
+  // フッター
+  //-------------------------------------
+
+  footer {
+    padding: 40px 0 40px 0;
+    height: 220px;
+  }
+
+  footer h1 {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 30px 0;
+    display: block;
+  }
+
+  footer .wrraper {
+    @include flex-row();
+    flex-direction: column;
+  }
+
+  footer nav {
+    display: none;
+  }
+
+  footer .left i {
+    display: none;
+  }
+
+  footer p {
+    margin-top: -210px;
+  }
+
+
+  //------------------------------------- 
+  // トップ　コンテンツ　コンセプト
+  //-------------------------------------
+
+  #home .consept {
+    margin: 110px auto 0 auto;
+    padding: 0 20px;
+  }
+
+  #home .consept h2 {
+    @include font-tegaki();
+    font-size: 25px;
+    margin: 0 0 40px 0;
+    text-align: center;
+  }
+
+  #home .consept p {
+    margin: 0 10px;
+    width: 85%;
+    text-align: left;
+  }
+
+  #home .consept p br {
+    display: none;
+  }
+
+  #home .consept .consept-food {
+    width: 320px;
+    margin: -300px auto 0 auto;
+    height: 200px;
+  }
+
+  #home .consept .consept-food img {
+    width: 130px;
+    margin: 0 10px 0 -30px;
+    padding: 0 5px;
+  }
+
+  #home .consept .consept-food img:nth-child(2) {
+    margin: 0 38px 0 0;
+    // 丸同士のマージン調整
+  }
+
+  //-------------------------------
+  //  トップ　コンテンツ　ハンバーガー
+  // ------------------------------
+
+  .humberger {
+    margin: -190px auto 0 auto;
+  }
+
+  .humberger .inner {
+    @include flex-row();
+    flex-direction: column;
+    width: 320px;
+    padding: 100px 0 70px 0;
+    margin-bottom: 100px;
+  }
+
+  .humberger h2 {
+    width: 320px;
+    font-size: 50px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .humberger h2 br {
+    display: none;
+  }
+
+  .humberger h3 {
+    margin-bottom: 20px;
+  }
+
+  .humberger p {
+    width: 320px;
+    margin-bottom: 20px;
+  }
+
+  .humberger p br {
+    display: none;
+  }
+
+  .humberger .left {
+    margin-left: -40px;
+    padding-left: 0;
+    height: 600px;
+    text-align: left;
+    width: 85%;
+  }
+
+  .humberger .right {
+    margin: -360px 0 0 20px;
+    width: 320px;
+  }
+
+  .humberger img {
+    min-width: 360px;
+    /* 最小幅 */
+    margin: 0;
+  }
+
+  //-------------------------------
+  //  トップ　コンテンツ　ニュース
+  // ------------------------------
+
+  .info {
+    margin: 0 auto 130px auto;
+    width: 360px;
+    height: 1200px;
+  }
+
+  .info h2 {
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 80px;
+  }
+
+  .info .info-img {
+    @include flex-row();
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+    margin: -280px auto 0 auto;
+  }
+
+  .info .topics {
+    margin-bottom: 70px;
+  }
+
+  .info .topics:last-child {
+    margin-bottom: 0;
+  }
+
+  //-------------------------------
+  //  メニュー
+  // ------------------------------
+
+  #menu h3 {
+    @include font900();
+    font-size: 45px;
+    padding: 0 0 0 20px;
+    margin-bottom: -20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .slider {
+    /*横幅94%で左右に余白を持たせて中央寄せ*/
+    width: 94%;
+    margin: 0 0 100px 5px;
+    overflow: hidden;
+  }
+
+  #menu h3::after {
+    content: "";
+    display: block;
+    background-color: $main-color;
+    height: 3px;
+    width: 100%;
+    margin-left: 20px;
+    margin-right: 100px;
+  }
+
+  .slick-prev {
+    /*戻る矢印の位置と形状*/
+    left: 85%;
+    transform: rotate(-135deg);
+  }
+
+  .slick-next {
+    /*次へ矢印の位置と形状*/
+    right: 5%;
+    transform: rotate(45deg);
+  }
+
+  //-------------------------------
+  //  アバウト
+  // ------------------------------
+
+  #about .consept {
+    padding-bottom: 120px;
+  }
+
+  #about .warrper {
+    @include flex-row();
+    flex-direction: column;
+    margin: 0 auto;
+    width: 360px;
+    padding-bottom: 30px;
+  }
+
+  #about .about-left {
+    width: 80%;
+    padding-left: 0;
+  }
+
+  #about .about-right {
+    width: 80%;
+    padding-top: 50px;
+    padding-left: 0;
+    margin: 0;
+
+    h3.first {
+      font-size: 25px;
+      margin: 0 0 15px -15px;
+    }
+
+    h3.second {
+      font-size: 25px;
+      margin: 0 0 45px 80px;
+    }
+
+    p br {
+      display: none;
+    }
+  }
+
+
+
+  #about .twoarea {
+    margin: 100px 0 120px 0;
+  }
+
+  #about .twoarea .foodarea {
+    @include flex-row();
+    flex-direction: column;
+    margin: 0 auto;
+    height: 360px;
+  }
+
+  #about .twoarea .foodarea .left {
+    width: 320px;
+  }
+
+  #about .twoarea h2 img {
+    margin-top: 0;
+    width: 320px;
+  }
+
+  #about .twoarea .foodarea .food-img {
+    width: 320px;
+    margin-top: -80px;
+  }
+
+  #about .twoarea .foodarea .right {
+    margin-top: -300px;
+    width: 320px;
+
+  }
+
+  #about .twoarea .foodarea p {
+    width: 320px;
+    margin-top: -50px;
+    margin-left: 0;
+    text-align: right;
+  }
+
+  #about .twoarea .coffee-berarea {
+    @include flex-row();
+    flex-direction: column;
+    margin: 0 auto;
+    height: 230px;
+  }
+
+  #about .twoarea .coffee-berarea img {
+    width: 320px;
+    margin-left: 0;
+  }
+
+  #about .twoarea .coffee-berarea p {
+    width: 320px;
+    text-align: left;
+    margin: 0 0 0 0;
+  }
+
+  #about .twoarea p {
+    text-align: left;
+    margin: 30px auto 0 auto;
+    width: 80%;
+  }
+
+  #about .mihama {
+    padding-top: 180px;
+  }
+
+  #about .mihama .mihama-inner {
+    @include flex-row();
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    padding-bottom: 100px;
+
+  }
+
+  #about .mihama .left {
+    width: 320px;
+    margin: 0 0 50px 0;
+    padding-top: 0;
+  }
+
+  #about .mihama .left h2 {
+    margin: 0 0 50px 0;
+  }
+
+  #about .mihama .right {
+    width: 320px;
+  }
+
+  #about .mihama .right img {
+    width: 320px;
+  }
+
+  .about-slider {
+
+    height: 410px;
+  }
+
+}
