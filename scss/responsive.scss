@@ -1,5 +1,6 @@
 @import "style.scss";
 @import "hamburger-menu.css";
+@import "5-1-15.css";
 
 // メディアクエリ　スマホ対応
 
@@ -32,6 +33,7 @@
     z-index: 10;
     width: 100%;
     height: 100vh;
+    // background-color: blue;
   }
 
   header.responsive-header .back-color {
@@ -58,24 +60,54 @@
 
   header.responsive-header .hm-absolute {
     position: absolute;
-    top: 38px;
-    right: 80px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    // background-color: blue;
   }
+
+  /*========= ナビゲーションのためのCSS ===============*/
+
+  #g-nav {
+    /*ナビの高さ*/
+    background: #000;
+  }
+
+  header.responsive-header .hm-absolute {
+    height: 100px;
+  }
+
+  header.responsive-header .hm-absolute ul {
+    // background-color: #000;
+    width: 30%;
+    height: 40%;
+    text-align: center;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header.responsive-header .hm-absolute li {
+    margin-left: 0;
+  }
+
+  #g-nav li a {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+
 
   header.responsive-header i {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 35px;
+    right: 7%;
     display: inline-block;
     color: #000;
     font-size: 25px;
-  }
-
-  header.responsive-header .hamburger-button {
-    position: absolute;
-    top: -7px;
-    right: -50px;
-    display: inline-block;
   }
 
   .top .copy {
@@ -103,33 +135,48 @@
 　ハンバーガーメニュー
 ===================================*/
 
+  /*========= ボタンのためのCSS ===============*/
+
+  .openbtn {
+    top: 22px;
+    right: 5%;
+    background-color: #fff;
+  }
+
+  /*×に変化*/
+  .openbtn span {
+    background-color: #000;
+  }
+
 
   /* ナビゲーション */
-  .hamburger-nav {
-    /* クリックしたときのメニューを全画面にする記述 */
-    height: 100vh;
-    width: 100%;
-    background-color: #000;
-    /* 背景にぼかしを入れた */
-  }
+  // .hamburger-nav {
+  //   /* クリックしたときのメニューを全画面にする記述 */
+  //   height: 100vh;
+  //   width: 100%;
+  //   background-color: #000;
+  /* 背景にぼかしを入れた */
+  // }
 
-  .hamburger-nav ul {
-    height: 100%;
-    width: 100%;
-    /* ※元のnavタグに100vhがかかっているため、子タグは100%で問題なし */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  // .hamburger-nav ul {
+  //   height: 100%;
+  //   width: 100%;
+  /* ※元のnavタグに100vhがかかっているため、子タグは100%で問題なし */
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 
-  .hamburger-nav li {
-    margin: 20px 0;
-  }
+  // .hamburger-nav li {
+  //   margin: 20px 0;
+  // }
 
-  .hamburger-nav a {
-    color: #fff;
-  }
+  // .hamburger-nav a {
+  //   color: #fff;
+  // }
+
+
 
 
   //------------------------------------- 
@@ -299,6 +346,10 @@
 
   .info .topics:last-child {
     margin-bottom: 0;
+  }
+
+  .info .topics a {
+    z-index: 999;
   }
 
   //-------------------------------
