@@ -533,6 +533,12 @@ footer p {
   text-align: left;
 }
 
+#menu h2 img {
+  max-height: 130px;
+  min-height: 50px;
+  width: 100%;
+}
+
 #menu h3 {
   font-weight: 900;
   font-style: normal;
@@ -683,6 +689,12 @@ footer p {
   margin-bottom: 120px;
   border-bottom: none;
   text-align: left;
+}
+
+#about h2 img {
+  max-height: 130px;
+  min-height: 50px;
+  width: 100%;
 }
 
 #about .warrper {
