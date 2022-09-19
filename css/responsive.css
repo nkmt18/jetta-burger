@@ -271,7 +271,6 @@ header.responsive-header {
   /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
 }
 
-/*　背景画像設定　*/
 .home-slider-item {
   width: 100%;
   /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
@@ -297,7 +296,6 @@ header.responsive-header {
 
 .home-slick-next {
   display: none;
-  /*次へ矢印の位置と形状*/
 }
 
 /*ドットナビゲーションの設定*/
@@ -678,7 +676,6 @@ footer p {
 
 .slick-dots .slick-active button {
   display: none;
-  /*ドットボタンの現在地表示の色*/
 }
 
 #about .consept {
@@ -1070,9 +1067,6 @@ footer p {
   .openbtn span {
     background-color: #000;
   }
-  /* ナビゲーション */
-  /* 背景にぼかしを入れた */
-  /* ※元のnavタグに100vhがかかっているため、子タグは100%で問題なし */
   footer {
     padding: 40px 0 40px 0;
     height: 220px;
@@ -1205,9 +1199,6 @@ footer p {
   }
   .info .topics:last-child {
     margin-bottom: 0;
-  }
-  .info .topics a {
-    overflow: hidden;
   }
   #menu h3 {
     font-weight: 900;

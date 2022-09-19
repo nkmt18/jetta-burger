@@ -184,7 +184,6 @@ header i.header-fa-brands {
 
 /* 以下は検証用のレイアウトのための CSS*/
 
-
 .pc-header nav ul {
   list-style: none;
   display: flex;
@@ -229,7 +228,6 @@ header i.header-fa-brands {
 #header.HeightMin i.header-fa-brands {
   color: $accent-color;
   position: absolute;
-  // margin-right: 15%;
   top: 35px;
   right: 150px;
   z-index: 600;
@@ -303,7 +301,6 @@ header.responsive-header {
 　トップ　スライダーのためのcss
 ===================================*/
 .home-slider {
-  // width: 100%;
   object-fit: cover;
   position: relative;
   z-index: -10;
@@ -311,20 +308,6 @@ header.responsive-header {
   height: 100vh;
   /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
 }
-
-/*　背景画像設定　*/
-
-// .home-slider-item01 {
-//   background: url(../img/img_01.jpg);
-// }
-
-// .home-slider-item02 {
-//   background: url(../img/img_02.jpg);
-// }
-
-// .home-slider-item03 {
-//   background: url(../img/img_03.jpg);
-// }
 
 .home-slider-item {
   width: 100%;
@@ -344,70 +327,33 @@ header.responsive-header {
 .home-slick-prev,
 .home-slick-next {
   display: none;
-  // position: absolute;
-  // z-index: 3;
-  // top: 42%;
-  // cursor: pointer;
-  // /*マウスカーソルを指マークに*/
-  // outline: none;
-  // /*クリックをしたら出てくる枠線を消す*/
-  // border-top: 2px solid #fff;
-  // /*矢印の色*/
-  // border-right: 2px solid #fff;
-  // /*矢印の色*/
-  // height: 25px;
-  // width: 25px;
 }
 
 .home-slick-prev {
   display: none;
-  // /*戻る矢印の位置と形状*/
-  // left: 2.5%;
-  // transform: rotate(-135deg);
 }
 
 .home-slick-next {
   display: none;
-  /*次へ矢印の位置と形状*/
-  // right: 2.5%;
-  // transform: rotate(45deg);
 }
 
 /*ドットナビゲーションの設定*/
 
 .home-slick-dots {
   display: none;
-  // position: relative;
-  // z-index: 3;
-  // text-align: center;
-  // margin: -50px 0 0 0;
   /*ドットの位置*/
 }
 
 .home-slick-dots li {
   display: none;
-  // display: inline-block;
-  // margin: 0 5px;
 }
 
 .home-slick-dots button {
   display: none;
-  // color: transparent;
-  // outline: none;
-  // width: 8px;
-  // /*ドットボタンのサイズ*/
-  // height: 8px;
-  // /*ドットボタンのサイズ*/
-  // display: block;
-  // border-radius: 50%;
-  // background: #fff;
-  // /*ドットボタンの色*/
 }
 
 .home-slick-dots .slick-active button {
   display: none;
-  // background: #333;
-  // /*ドットボタンの現在地表示の色*/
 }
 
 
@@ -758,8 +704,6 @@ footer p {
 
 .slick-dots {
   display: none;
-  // text-align: center;
-  // margin: 20px 0 0 0;
 }
 
 .slick-dots li {
@@ -769,22 +713,10 @@ footer p {
 
 .slick-dots button {
   display: none;
-  // color: transparent;
-  // outline: none;
-  // width: 8px;
-  // /*ドットボタンのサイズ*/
-  // height: 8px;
-  // /*ドットボタンのサイズ*/
-  // display: block;
-  // border-radius: 50%;
-  // background: #ccc;
-  // /*ドットボタンの色*/
 }
 
 .slick-dots .slick-active button {
   display: none;
-  // background: #333;
-  /*ドットボタンの現在地表示の色*/
 }
 
 //-------------------------------

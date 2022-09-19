@@ -159,37 +159,6 @@
     background-color: #000;
   }
 
-
-  /* ナビゲーション */
-  // .hamburger-nav {
-  //   /* クリックしたときのメニューを全画面にする記述 */
-  //   height: 100vh;
-  //   width: 100%;
-  //   background-color: #000;
-  /* 背景にぼかしを入れた */
-  // }
-
-  // .hamburger-nav ul {
-  //   height: 100%;
-  //   width: 100%;
-  /* ※元のnavタグに100vhがかかっているため、子タグは100%で問題なし */
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-
-  // .hamburger-nav li {
-  //   margin: 20px 0;
-  // }
-
-  // .hamburger-nav a {
-  //   color: #fff;
-  // }
-
-
-
-
   //------------------------------------- 
   // フッター
   //-------------------------------------
@@ -359,11 +328,6 @@
     margin-bottom: 0;
   }
 
-  .info .topics a {
-    // z-index: 999;
-    overflow: hidden;
-  }
-
   //-------------------------------
   //  メニュー
   // ------------------------------
@@ -449,8 +413,6 @@
       display: none;
     }
   }
-
-
 
   #about .twoarea {
     margin: 100px 0 120px 0;

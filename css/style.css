@@ -269,7 +269,6 @@ header.responsive-header {
   /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
 }
 
-/*　背景画像設定　*/
 .home-slider-item {
   width: 100%;
   /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
@@ -295,7 +294,6 @@ header.responsive-header {
 
 .home-slick-next {
   display: none;
-  /*次へ矢印の位置と形状*/
 }
 
 /*ドットナビゲーションの設定*/
@@ -676,7 +674,6 @@ footer p {
 
 .slick-dots .slick-active button {
   display: none;
-  /*ドットボタンの現在地表示の色*/
 }
 
 #about .consept {
