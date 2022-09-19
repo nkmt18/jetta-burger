@@ -210,11 +210,16 @@ section {
   top: 350px;
   left: 160px;
   z-index: 2;
+  letter-spacing: 3px;
 }
 
 #home .top .copy {
-  top: 415px;
-  left: 98px;
+  top: 380px;
+  left: 75px;
+}
+
+#menu .top .copy {
+  left: 165px;
 }
 
 .top .scroll {

@@ -212,11 +212,16 @@ section {
   top: 350px;
   left: 160px;
   z-index: 2;
+  letter-spacing: 3px;
 }
 
 #home .top .copy {
-  top: 415px;
-  left: 98px;
+  top: 380px;
+  left: 75px;
+}
+
+#menu .top .copy {
+  left: 165px;
 }
 
 .top .scroll {
@@ -535,6 +540,12 @@ footer p {
   text-align: left;
 }
 
+#menu h2 img {
+  max-height: 130px;
+  min-height: 50px;
+  width: 100%;
+}
+
 #menu h3 {
   font-weight: 900;
   font-style: normal;
@@ -682,10 +693,15 @@ footer p {
 }
 
 #about h2 {
-  max-height: 50px;
   margin-bottom: 120px;
   border-bottom: none;
   text-align: left;
+}
+
+#about h2 img {
+  max-height: 130px;
+  min-height: 50px;
+  width: 100%;
 }
 
 #about .warrper {
@@ -1015,7 +1031,15 @@ footer p {
   }
   #home .top .copy {
     top: 300px;
-    left: -40px;
+    left: -80px;
+  }
+  #about .top .copy {
+    top: 220px;
+    left: 7px;
+  }
+  #menu .top .copy {
+    top: 215px;
+    left: 20px;
   }
   .top .scroll {
     width: 10px;
